@@ -1,0 +1,30 @@
+# 忽略所有数据文件夹
+data*/
+training_data/
+training_data_from_bag/
+data_manual_final/
+data_manual_second_bag/
+data_v2_final/
+data_bag_1/
+data_bag_2/
+
+# 忽略所有模型文件
+*.h5
+*.tflite
+*.pb
+models/
+
+# 忽略 ROS Bag 文件
+*.bag
+
+# 忽略 Python 缓存和虚拟环境
+__pycache__/
+.env/
+venv/
+
+# 忽略 VS Code 缓存
+.vscode/
+
+# 忽略 Conda 环境 (你把 Miniconda3 装在 ~/)
+.conda/
+miniconda3/

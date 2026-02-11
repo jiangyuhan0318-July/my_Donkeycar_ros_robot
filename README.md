@@ -35,6 +35,10 @@
     *   实践 **Git/GitHub** 进行版本控制，包括初始化仓库、创建个人开发分支 (`roxy_work`)、日常代码提交、以及遵循团队协作规范 (`.gitignore` 配置以排除大数据文件，并解决了 Git 权限管理及 `remote origin already exists` 等实际问题)。
     *   使用 **FileZilla** 等工具安全高效地在 Windows 宿主机与 Ubuntu 虚拟机之间传输大文件。
 
+### 🧩 部署实战与问题解决 (Deployment & Troubleshooting)
+*   **边缘侧直接部署方案 (Edge-Direct Deployment):** 在实车联调阶段，由于手机热点存在 AP 隔离，导致虚拟机与 ROS Master 握手失败。我成功验证并记录了通过 `scp` 指令将模型与推理脚本直接传输至小车板卡（Jetson/Ubuntu）运行的方案，绕过了网络延迟与隔离限制。
+*   **多格式模型支持 (Multi-format Model Support):** 针对嵌入式端推理性能优化，实现了模型从 `.h5` 到 `.onnx` 格式的迁移，显著提升了在 NVIDIA 边缘计算平台上的兼容性。
+
 ## 技术栈 (Technical Stack)
 
 *   **人工智能框架:** TensorFlow, Keras, Donkeycar (v5.2.dev6)
@@ -49,9 +53,9 @@
 
 *   **代码仓库:** `https://github.com/jiangyuhan0318-July/my_donkeycar_ros_robot`
     *   所有代码都已提交，包括自定义的 ROS 桥接脚本和数据转换脚本。
-*   **Demo 视频:**
-    *   *(示例: [小车自主驾驶演示](https://www.youtube.com/watch?v=your_video_id))*
-
+*   **模型文件:**
+    *   仓库中 `my_pilot.onnx` 为优化后的 AI 大脑，可直接部署于支持 ONNX Runtime 的硬件环境。
+    
 ## 学习心得与挑战 (Learning & Challenges)
 
 在本项目中，我作为大一同学，独立面对并成功解决了以下核心挑战：
@@ -106,6 +110,10 @@ As a primary developer for this project, I was responsible for the entire proces
     *   Practiced **Git/GitHub** for version control, including repository initialization, creating personal development branches (e.g., `roxy_work`), routine code commits, and adhering to team collaboration norms (e.g., `.gitignore` configuration to exclude large data files, and resolving practical issues like Git permissions and `remote origin already exists`).
     *   Utilized **FileZilla** for secure and efficient large file transfer between the Windows host and Ubuntu VM.
 
+### 🧩 Deployment & Troubleshooting
+*   **Edge-Direct Deployment:** During real-vehicle testing, a bi-directional ROS handshake failure occurred due to mobile hotspot AP isolation. I successfully validated a "Direct-to-Edge" deployment strategy using the `scp` command to transfer the model and inference scripts directly to the vehicle's onboard computer (Jetson/Ubuntu), bypassing network latency and isolation constraints.
+*   **Multi-format Model Support:** Optimized for edge computing performance by migrating the model from Keras (`.h5`) to `ONNX` format, ensuring high-frame-rate inference and compatibility with NVIDIA TensorRT acceleration.
+
 ## Technical Stack
 
 *   **AI Frameworks:** TensorFlow, Keras, Donkeycar (v5.2.dev6)
@@ -120,8 +128,8 @@ As a primary developer for this project, I was responsible for the entire proces
 
 *   **Code Repository:** `https://github.com/jiangyuhan0318-July/my_donkeycar_ros_robot`
     *   All core code, including custom ROS bridge and data conversion scripts, has been committed.
-*   **Demo Video:**
-    *   *(Example: [Autonomous Driving Demo](https://www.youtube.com/watch?v=your_video_id))*
+*   **Models:**
+    *   The `my_pilot.onnx` file in the repository is the optimized AI engine, ready for deployment on any hardware supporting ONNX Runtime.
 
 ## Learning & Challenges
 

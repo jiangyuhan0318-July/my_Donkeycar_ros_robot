@@ -35,7 +35,7 @@
     *   实践 **Git/GitHub** 进行版本控制，包括初始化仓库、创建个人开发分支 (`roxy_work`)、日常代码提交、以及遵循团队协作规范 (`.gitignore` 配置以排除大数据文件，并解决了 Git 权限管理及 `remote origin already exists` 等实际问题)。
     *   使用 **FileZilla** 等工具安全高效地在 Windows 宿主机与 Ubuntu 虚拟机之间传输大文件。
 
-### 🧩 部署实战与问题解决 (Deployment & Troubleshooting)
+## 部署实战与问题解决 (Deployment & Troubleshooting)
 *   **边缘侧直接部署方案 (Edge-Direct Deployment):** 在实车联调阶段，由于手机热点存在 AP 隔离，导致虚拟机与 ROS Master 握手失败。我成功验证并记录了通过 `scp` 指令将模型与推理脚本直接传输至小车板卡（Jetson/Ubuntu）运行的方案，绕过了网络延迟与隔离限制。
 *   **多格式模型支持 (Multi-format Model Support):** 针对嵌入式端推理性能优化，实现了模型从 `.h5` 到 `.onnx` 格式的迁移，显著提升了在 NVIDIA 边缘计算平台上的兼容性。
 
@@ -110,7 +110,7 @@ As a primary developer for this project, I was responsible for the entire proces
     *   Practiced **Git/GitHub** for version control, including repository initialization, creating personal development branches (e.g., `roxy_work`), routine code commits, and adhering to team collaboration norms (e.g., `.gitignore` configuration to exclude large data files, and resolving practical issues like Git permissions and `remote origin already exists`).
     *   Utilized **FileZilla** for secure and efficient large file transfer between the Windows host and Ubuntu VM.
 
-### 🧩 Deployment & Troubleshooting
+## Deployment & Troubleshooting
 *   **Edge-Direct Deployment:** During real-vehicle testing, a bi-directional ROS handshake failure occurred due to mobile hotspot AP isolation. I successfully validated a "Direct-to-Edge" deployment strategy using the `scp` command to transfer the model and inference scripts directly to the vehicle's onboard computer (Jetson/Ubuntu), bypassing network latency and isolation constraints.
 *   **Multi-format Model Support:** Optimized for edge computing performance by migrating the model from Keras (`.h5`) to `ONNX` format, ensuring high-frame-rate inference and compatibility with NVIDIA TensorRT acceleration.
 
